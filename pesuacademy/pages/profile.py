@@ -15,7 +15,7 @@ from pesuacademy.models import (
     Profile,
     QualifyingExamination,
 )
-from pesuacademy.models.profile import BloodGroup
+from pesuacademy.models.profile import BloodGroupType
 from pesuacademy.util import _build_params
 
 
@@ -91,9 +91,6 @@ class _ProfilePageHandler:
         )
 
         raw_blood_group = _ProfilePageHandler._find_value_for_label(other_info_container, "Blood Group")
-
-        if raw_blood_group not in BloodGroup.__args__:
-            raise ValueError(f"Unexpected blood group value: {raw_blood_group}")
 
         other_info = OtherInformation(
             sslc_marks=_ProfilePageHandler._find_value_for_label(other_info_container, "SSLC Marks"),
@@ -172,3 +169,4 @@ class _ProfilePageHandler:
 
         soup = BeautifulSoup(response.text, "lxml")
         return _ProfilePageHandler._parse_profile_soup(soup)
+
