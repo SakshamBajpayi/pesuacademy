@@ -4,7 +4,7 @@ from typing import Literal
 
 from pydantic import BaseModel
 
-BloodGroup = Literal["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"]
+BloodGroupType = Literal["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"]
 
 
 class PersonalDetails(BaseModel):
@@ -51,7 +51,7 @@ class OtherInformation(BaseModel):
     sslc_marks: str
     puc_marks: str
     date_of_birth: str
-    blood_group: BloodGroup
+    blood_group: BloodGroupType
 
 
 class QualifyingExamination(BaseModel):
@@ -130,3 +130,4 @@ class Profile(BaseModel):
     qualifying_exam: QualifyingExamination
     parents: ParentInformation
     address: AddressDetails
+
