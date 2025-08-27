@@ -130,4 +130,3 @@ class Profile(BaseModel):
     qualifying_exam: QualifyingExamination
     parents: ParentInformation
     address: AddressDetails
-

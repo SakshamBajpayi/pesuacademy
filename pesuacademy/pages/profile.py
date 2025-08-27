@@ -15,7 +15,6 @@ from pesuacademy.models import (
     Profile,
     QualifyingExamination,
 )
-from pesuacademy.models.profile import BloodGroupType
 from pesuacademy.util import _build_params
 
 
@@ -169,4 +168,3 @@ class _ProfilePageHandler:
 
         soup = BeautifulSoup(response.text, "lxml")
         return _ProfilePageHandler._parse_profile_soup(soup)
-
